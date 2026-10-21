@@ -1,0 +1,42 @@
+<Application x:Class="WpfInventory.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:WpfInventory.App.ViewModels"
+             xmlns:views="clr-namespace:WpfInventory.App.Views">
+    <Application.Resources>
+        <!-- DataTemplate：当 ContentControl 的内容是某个 ViewModel 时，自动渲染对应的 View。 -->
+        <DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+            <views:DashboardView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ProductViewModel}">
+            <views:ProductView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CategoryViewModel}">
+            <views:CategoryView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:WarehouseViewModel}">
+            <views:WarehouseView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SupplierViewModel}">
+            <views:SupplierView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CustomerViewModel}">
+            <views:CustomerView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StockTransactionViewModel}">
+            <views:StockTransactionView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ReportViewModel}">
+            <views:ReportView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:UserViewModel}">
+            <views:UserView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:RoleViewModel}">
+            <views:RoleView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:AuditLogViewModel}">
+            <views:AuditLogView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

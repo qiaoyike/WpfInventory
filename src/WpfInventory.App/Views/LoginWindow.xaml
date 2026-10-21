@@ -1,0 +1,40 @@
+<Window x:Class="WpfInventory.App.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="登录 - WpfInventory"
+        Width="420"
+        Height="360"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Margin="36">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="WpfInventory 库存管理系统"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,24" />
+
+            <TextBlock Text="用户名" Margin="0,0,0,4" />
+            <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                     Padding="6"
+                     Margin="0,0,0,12" />
+
+            <TextBlock Text="密码" Margin="0,0,0,4" />
+            <!-- PasswordBox 出于安全考虑不直接绑定字符串，这里通过代码隐藏设置 ViewModel。 -->
+            <PasswordBox x:Name="PasswordInput"
+                         PasswordChanged="PasswordInput_PasswordChanged"
+                         Padding="6"
+                         Margin="0,0,0,12" />
+
+            <TextBlock Text="{Binding ErrorMessage}"
+                       Foreground="#C62828"
+                       TextWrapping="Wrap"
+                       Margin="0,0,0,8" />
+
+            <Button Content="登录"
+                    Command="{Binding LoginCommand}"
+                    Padding="0,8"
+                    FontSize="14" />
+        </StackPanel>
+    </Grid>
+</Window>
