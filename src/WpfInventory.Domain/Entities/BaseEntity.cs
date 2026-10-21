@@ -17,7 +17,7 @@ public abstract class BaseEntity
     public DateTime CreatedAt { get; set; }
 
     /// <summary>
-    /// 最后更新时间。
+    /// 最后更新时间。11
     /// </summary>
     public DateTime? UpdatedAt { get; set; }
 }
